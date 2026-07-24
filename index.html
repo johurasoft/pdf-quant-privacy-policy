@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — PDF Quant: Editor &amp; Manager</title>
+<style>
+  :root{
+    --indigo-700:#3949ab;
+    --indigo-a:#536dfe;
+    --bg:#F8F9FA;
+    --surface:#FFFFFF;
+    --card:#EEF0FB;
+    --text:#1c1c1e;
+    --text-soft:#4b4b52;
+    --hint:#8a8a92;
+    --border:#e3e4ea;
+  }
+  [data-theme="dark"]{
+    --bg:#121216;
+    --surface:#1E1E26;
+    --card:#252530;
+    --text:#f2f2f5;
+    --text-soft:#c7c7ce;
+    --hint:#8d8d97;
+    --border:#2e2e38;
+    --indigo-700:#7C8CFF;
+    --indigo-a:#7C8CFF;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    transition:background .25s ease, color .25s ease;
+  }
+
+  header{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  header .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:16px;
+  }
+  header .brand .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--indigo-700);
+  }
+  .theme-toggle{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    border-radius:20px;
+    padding:8px 14px;
+    font-size:13px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .theme-toggle:hover{border-color:var(--indigo-700);}
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:32px 20px 80px;
+  }
+
+  h1.title{
+    font-size:26px;
+    font-weight:800;
+    margin:8px 0 4px;
+    color:var(--text);
+  }
+  .subtitle{
+    color:var(--hint);
+    font-size:14px;
+    margin-bottom:28px;
+  }
+
+  .summary-card{
+    background:var(--card);
+    border-radius:16px;
+    padding:18px 20px;
+    margin-bottom:28px;
+  }
+  .summary-card h2{
+    font-size:16px;
+    margin:0 0 12px;
+    color:var(--indigo-700);
+  }
+  .summary-point{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:13.5px;
+    line-height:1.5;
+    margin-bottom:8px;
+    color:var(--text-soft);
+  }
+  .summary-point .emoji{flex-shrink:0;}
+
+  .intro{
+    font-style:italic;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--text-soft);
+    margin-bottom:28px;
+  }
+
+  nav.toc{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:16px 20px;
+    margin-bottom:32px;
+  }
+  nav.toc h3{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--hint);
+    margin:0 0 10px;
+  }
+  nav.toc ol{
+    columns:2;
+    -webkit-columns:2;
+    margin:0;
+    padding-left:18px;
+    font-size:13.5px;
+  }
+  nav.toc li{margin-bottom:6px;}
+  nav.toc a{
+    color:var(--text-soft);
+    text-decoration:none;
+  }
+  nav.toc a:hover{color:var(--indigo-700);}
+
+  section.policy-section{
+    margin-bottom:26px;
+    padding-bottom:26px;
+    border-bottom:1px solid var(--border);
+  }
+  section.policy-section:last-of-type{border-bottom:none;}
+
+  section.policy-section h2{
+    font-size:17px;
+    font-weight:700;
+    color:var(--indigo-700);
+    margin:0 0 8px;
+  }
+  section.policy-section p{
+    font-size:14px;
+    line-height:1.65;
+    color:var(--text-soft);
+    white-space:pre-line;
+    margin:0;
+  }
+  section.policy-section a{
+    color:var(--indigo-700);
+  }
+
+  .view-app-btn{
+    display:block;
+    width:fit-content;
+    margin:20px auto 0;
+    padding:12px 24px;
+    border-radius:10px;
+    border:1px solid var(--indigo-700);
+    color:var(--indigo-700);
+    background:transparent;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .view-app-btn:hover{background:var(--card);}
+
+  .dates{
+    text-align:center;
+    margin-top:32px;
+    color:var(--hint);
+    font-size:12px;
+    line-height:1.8;
+  }
+
+  .back-to-top{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--indigo-700);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:18px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease;
+    box-shadow:0 4px 14px rgba(0,0,0,.2);
+  }
+  .back-to-top.show{opacity:1;pointer-events:auto;}
+
+  @media (max-width:520px){
+    nav.toc ol{columns:1;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><span class="dot"></span> PDF Quant</div>
+  <button class="theme-toggle" id="themeToggle">🌙 Dark mode</button>
+</header>
+
+<div class="wrap">
+
+  <h1 class="title">Privacy Policy</h1>
+  <div class="subtitle">PDF Quant: Editor &amp; Manager</div>
+
+  <div class="summary-card">
+    <h2>Quick Summary</h2>
+    <div class="summary-point"><span class="emoji">📱</span><span>All PDF processing happens on your device — no uploads</span></div>
+    <div class="summary-point"><span class="emoji">🔒</span><span>Your files are never accessed by us or third parties</span></div>
+    <div class="summary-point"><span class="emoji">📢</span><span>Ads are shown via Google AdMob with your consent</span></div>
+    <div class="summary-point"><span class="emoji">❌</span><span>We do not sell your personal information</span></div>
+    <div class="summary-point"><span class="emoji">🛡️</span><span>Your documents stay private — we never see them</span></div>
+  </div>
+
+  <p class="intro">This page informs you of our policies regarding the collection, use, and disclosure of personal information when you use PDF Quant: Editor &amp; Manager. By using this app, you agree to the collection and use of information in accordance with this policy.</p>
+
+  <nav class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#s1">Information Collection and Use</a></li>
+      <li><a href="#s2">File Processing</a></li>
+      <li><a href="#s3">Permissions and Third-Party Services</a></li>
+      <li><a href="#s4">Advertisements (Google AdMob)</a></li>
+      <li><a href="#s5">GDPR &amp; User Consent (UMP)</a></li>
+      <li><a href="#s6">Third-Party Services</a></li>
+      <li><a href="#s7">File Sharing</a></li>
+      <li><a href="#s8">Data Storage &amp; Security</a></li>
+      <li><a href="#s9">Children's Privacy (COPPA)</a></li>
+      <li><a href="#s10">Data We Do NOT Collect</a></li>
+      <li><a href="#s11">International Data Transfers</a></li>
+      <li><a href="#s12">Your Rights (GDPR &amp; CCPA)</a></li>
+      <li><a href="#s13">Changes to This Privacy Policy</a></li>
+      <li><a href="#s14">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <section class="policy-section" id="s1">
+    <h2>1. Information Collection and Use</h2>
+    <p>PDF Quant: Editor &amp; Manager is designed to work entirely offline. All file operations — including PDF compression, merging, splitting, page deletion, image-to-PDF conversion, and PDF-to-image conversion — are performed locally on your device.
+
+We do not collect, store, or upload your files or personal documents to any server. The information we may use includes:
+
+• App settings (theme preference) stored locally via 'shared_preferences'
+• Ad-related identifiers collected by Google AdMob (see Section 4)
+
+Photo/Image Access: When you use the Image to PDF feature, the app uses 'image_picker' to let you select photos from your device gallery. These images are processed entirely on your device and are NEVER uploaded, transmitted, or stored by us.
+
+Document Printing: When you use the print feature, the app uses the 'printing' package to send your document to your device's print system. This data is handled by your device's print spooler or connected printer service — not by us.
+
+We do NOT collect:
+• Your PDF file contents or filenames
+• Location data
+• Contact details, email addresses, or phone numbers
+• Photos or images beyond what you explicitly select for conversion</p>
+  </section>
+
+  <section class="policy-section" id="s2">
+    <h2>2. File Processing</h2>
+    <p>All PDF operations (merge, split, compress, image to PDF, PDF to image, page delete) occur entirely on your device:
+
+• Files are NOT uploaded to any server
+• Files are NOT stored by us
+• Temporary files are automatically deleted after processing
+• We have NO access to your documents at any time</p>
+  </section>
+
+  <section class="policy-section" id="s3">
+    <h2>3. Permissions and Third-Party Services</h2>
+    <p>PDF Quant: Editor &amp; Manager requests the following permissions and uses these services:
+
+• Image Selection: We use 'image_picker' to allow you to select photos from your gallery or files to convert into PDF. These images are processed locally on your device and are NEVER uploaded to our servers.
+• PDF Printing: We use a printing service to allow you to preview and print your documents. Note that your document data may be passed through your device's system print spooler or a third-party print application (such as a printer manufacturer's companion app) if configured on your device. We have no control over third-party print applications.
+• Internet: Required for Google AdMob to display advertisements.
+• Advertising ID (AD_ID): Automatically used by Google AdMob for ad delivery and measurement. You can reset or opt out via Android Settings → Google → Ads.
+
+Note: This app uses system-managed file pickers (Storage Access Framework) to select PDFs and images, which means we do not require or request broad 'Storage' or 'Media' permissions on modern Android devices.
+
+All permissions are used strictly for the stated purpose only.</p>
+  </section>
+
+  <section class="policy-section" id="s4">
+    <h2>4. Advertisements (Google AdMob)</h2>
+    <p>We use Google AdMob to display banner and interstitial advertisements. AdMob may collect certain data including:
+
+• Device identifiers (e.g., Advertising ID / AD_ID)
+• IP address
+• Usage data for ad personalization
+
+We use Google's User Messaging Platform (UMP) to request your consent before displaying personalized ads, in compliance with GDPR and Google Play policies.
+
+For more information, see Google's Privacy Policy:
+<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+  </section>
+
+  <section class="policy-section" id="s5">
+    <h2>5. GDPR &amp; User Consent (UMP)</h2>
+    <p>For users in the European Economic Area (EEA) and UK, in accordance with GDPR:
+
+• On first launch, you will see a consent dialog
+• You may Accept or Decline personalized advertisements
+• Your choice is stored locally and respected immediately
+• You may change your preference at any time from app Settings
+
+Declining personalized ads does NOT affect any app functionality. All PDF features work regardless of your ad choice.</p>
+  </section>
+
+  <section class="policy-section" id="s6">
+    <h2>6. Third-Party Services</h2>
+    <p>The app uses the following third-party services which have their own Privacy Policies:
+
+• Google Play Services
+• Google AdMob — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
+• Google User Messaging Platform (UMP)
+
+These services may collect information used to identify you as described in their respective policies.</p>
+  </section>
+
+  <section class="policy-section" id="s7">
+    <h2>7. File Sharing</h2>
+    <p>When you use the 'Share' feature, your selected files are passed directly to third-party applications of your choice (e.g., WhatsApp, Gmail, Bluetooth). Once shared, the data is subject to the privacy policy of the respective application. We have no control over how third-party apps handle your shared data.</p>
+  </section>
+
+  <section class="policy-section" id="s8">
+    <h2>8. Data Storage &amp; Security</h2>
+    <p>• App settings are stored locally on your device only
+• PDF files are processed in temporary storage and deleted immediately after
+• Uninstalling the app removes all locally stored data
+• We do not operate any servers that store your data
+• No user accounts or passwords are required
+
+While we take all reasonable steps to protect your data, no method of electronic storage is 100% secure.</p>
+  </section>
+
+  <section class="policy-section" id="s9">
+    <h2>9. Children's Privacy (COPPA)</h2>
+    <p>PDF Quant: Editor &amp; Manager is intended for general audiences and is not designed specifically for children. We do not knowingly collect data from children under the age of 13.
+
+If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at the email below so we can take the necessary actions.</p>
+  </section>
+
+  <section class="policy-section" id="s10">
+    <h2>10. Data We Do NOT Collect</h2>
+    <p>We want to be fully transparent about what we do not collect:
+
+• We do NOT sell or rent your personal information to any third party
+• We do NOT collect or access your device's location
+• We do NOT collect your PDF file contents or filenames
+• We do NOT collect contact details, emails, or phone numbers
+• We do NOT share data for advertising purposes beyond AdMob's own policy</p>
+  </section>
+
+  <section class="policy-section" id="s11">
+    <h2>11. International Data Transfers</h2>
+    <p>Your data may be transferred to and processed in countries outside your own, including the United States, by Google's services (AdMob, UMP).
+
+Google ensures adequate safeguards through Standard Contractual Clauses. For EEA/UK users, your UMP consent covers these transfers.
+
+For details: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+  </section>
+
+  <section class="policy-section" id="s12">
+    <h2>12. Your Rights (GDPR &amp; CCPA)</h2>
+    <p>Depending on your location, you may have the following rights:
+
+• Right to Access: We do not store personal data on our servers. For data collected by Google AdMob (such as Advertising ID), please refer to Google's data access tools at myaccount.google.com
+• Right to Deletion: Uninstall the app to delete all local data
+• Right to Withdraw Consent: Change ad preference in app Settings
+• Right to Opt-Out: Android Settings → Google → Ads → Opt out of Ads Personalization
+• Right to Object: Decline analytics or personalized ads at any time
+
+California residents (CCPA): We do not sell your personal information.
+
+To exercise your rights, contact us at the email below.</p>
+  </section>
+
+  <section class="policy-section" id="s13">
+    <h2>13. Changes to This Privacy Policy</h2>
+    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date.
+
+You are advised to review this page periodically. Changes are effective immediately after they are posted.</p>
+  </section>
+
+  <section class="policy-section" id="s14">
+    <h2>14. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:
+
+Email: <a href="mailto:johurasoftone@gmail.com">johurasoftone@gmail.com</a>
+Subject: PDF Quant — Privacy Request
+Response Time: Within 30 days
+
+Note: Since we do not store any personal data on our servers, data-related requests will be directed to the respective third-party service (e.g., Google AdMob) as applicable.</p>
+  </section>
+
+  <div class="dates">
+    Effective Date: June 1, 2026<br>
+    Last Updated: July 2026
+  </div>
+
+</div>
+
+<a href="#top" class="back-to-top" id="backToTop">↑</a>
+
+<script>
+  // Theme toggle with saved preference (in-memory only, per session)
+  const toggleBtn = document.getElementById('themeToggle');
+  let theme = 'light';
+
+  function applyTheme(t){
+    theme = t;
+    document.documentElement.setAttribute('data-theme', t);
+    toggleBtn.textContent = t === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+  }
+
+  // Respect system preference on first load
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    applyTheme(theme === 'dark' ? 'light' : 'dark');
+  });
+
+  // Back-to-top visibility
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
