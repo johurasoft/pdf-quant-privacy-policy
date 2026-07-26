@@ -270,17 +270,18 @@
     <h2>1. Information Collection and Use</h2>
     <p>PDF Quant: Editor &amp; Manager is designed to work entirely offline. All file operations — including PDF compression, merging, splitting, page deletion, image-to-PDF conversion, and PDF-to-image conversion — are performed locally on your device.
 
-We do not collect, store, or upload your files or personal documents to any server. The information we may use includes:
+We do not upload your files or personal documents to any server. The information the app stores, entirely on your own device, includes:
 
 • App settings (theme preference) stored locally via 'shared_preferences'
+• Recent Documents History: the names and file paths of PDFs you create or modify, stored locally so you can find them again in the app. This list never leaves your device and can be cleared at any time (see Section 12).
 • Ad-related identifiers collected by Google AdMob (see Section 4)
 
 Photo/Image Access: When you use the Image to PDF feature, the app uses 'image_picker' to let you select photos from your device gallery. These images are processed entirely on your device and are NEVER uploaded, transmitted, or stored by us.
 
 Document Printing: When you use the print feature, the app uses the 'printing' package to send your document to your device's print system. This data is handled by your device's print spooler or connected printer service — not by us.
 
-We do NOT collect:
-• Your PDF file contents or filenames
+We do NOT upload, transmit, or have remote access to:
+• Your PDF file contents
 • Location data
 • Contact details, email addresses, or phone numbers
 • Photos or images beyond what you explicitly select for conversion</p>
@@ -305,7 +306,7 @@ We do NOT collect:
 • Internet: Required for Google AdMob to display advertisements.
 • Advertising ID (AD_ID): Automatically used by Google AdMob for ad delivery and measurement. You can reset or opt out via Android Settings → Google → Ads.
 
-Note: This app uses system-managed file pickers (Storage Access Framework) to select PDFs and images, which means we do not require or request broad 'Storage' or 'Media' permissions on modern Android devices.
+Note: This app uses system-managed file pickers (Storage Access Framework) to select PDFs and images, which means we do not require or request broad 'Storage' or 'Media' permissions on modern Android devices. On older Android devices (API 29 and below), the app may request the 'WRITE_EXTERNAL_STORAGE' permission solely to ensure files can be saved correctly; this permission is not requested on modern Android versions.
 
 All permissions are used strictly for the stated purpose only.</p>
   </section>
@@ -354,7 +355,7 @@ These services may collect information used to identify you as described in thei
 
   <section class="policy-section" id="s8">
     <h2>8. Data Storage &amp; Security</h2>
-    <p>• App settings are stored locally on your device only
+    <p>• App settings and Recent Documents history (file names and paths) are stored locally on your device only, and are never uploaded anywhere
 • PDF files are processed in temporary storage and deleted immediately after
 • Uninstalling the app removes all locally stored data
 • We do not operate any servers that store your data
@@ -376,7 +377,7 @@ If you are a parent or guardian and believe your child has provided us with pers
 
 • We do NOT sell or rent your personal information to any third party
 • We do NOT collect or access your device's location
-• We do NOT collect your PDF file contents or filenames
+• We do NOT upload or transmit your PDF file contents to any server (file names/paths are kept locally only, as described in Sections 1 and 8)
 • We do NOT collect contact details, emails, or phone numbers
 • We do NOT share data for advertising purposes beyond AdMob's own policy</p>
   </section>
@@ -395,7 +396,7 @@ For details: <a href="https://policies.google.com/privacy" target="_blank" rel="
     <p>Depending on your location, you may have the following rights:
 
 • Right to Access: We do not store personal data on our servers. For data collected by Google AdMob (such as Advertising ID), please refer to Google's data access tools at myaccount.google.com
-• Right to Deletion: Uninstall the app to delete all local data
+• Right to Deletion: You can use the 'Clear History' option in the Recent Documents / My Files screen to remove the local list of file names and paths at any time, or uninstall the app to delete all local app data
 • Right to Withdraw Consent: Change ad preference in app Settings
 • Right to Opt-Out: Android Settings → Google → Ads → Opt out of Ads Personalization
 • Right to Object: Decline analytics or personalized ads at any time
@@ -425,7 +426,7 @@ Note: Since we do not store any personal data on our servers, data-related reque
 
   <div class="dates">
     Effective Date: June 1, 2026<br>
-    Last Updated: July 2026
+    Last Updated: July 25, 2026
   </div>
 
 </div>
