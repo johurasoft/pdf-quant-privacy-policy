@@ -223,7 +223,7 @@
   }
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <div class="brand"><span class="dot"></span> PDF Quant</div>
@@ -276,7 +276,7 @@ We do not upload your files or personal documents to any server. The information
 • Recent Documents History: the names and file paths of PDFs you create or modify, stored locally so you can find them again in the app. This list never leaves your device and can be cleared at any time (see Section 12).
 • Ad-related identifiers collected by Google AdMob (see Section 4)
 
-Photo/Image Access: When you use the Image to PDF feature, the app uses 'image_picker' to let you select photos from your device gallery. These images are processed entirely on your device and are NEVER uploaded, transmitted, or stored by us.
+Photo/Image Access: When you use the Image to PDF feature, the app uses Android's system Photo Picker ('image_picker' v1.1.2+) to let you select photos from your device gallery. This uses the Android Photo Picker API, which does not require broad media storage permissions. The selected images are processed entirely on your device and are NEVER uploaded, transmitted, or stored by us.
 
 Document Printing: When you use the print feature, the app uses the 'printing' package to send your document to your device's print system. This data is handled by your device's print spooler or connected printer service — not by us.
 
@@ -301,12 +301,13 @@ We do NOT upload, transmit, or have remote access to:
     <h2>3. Permissions and Third-Party Services</h2>
     <p>PDF Quant: Editor &amp; Manager requests the following permissions and uses these services:
 
-• Image Selection: We use 'image_picker' to allow you to select photos from your gallery or files to convert into PDF. These images are processed locally on your device and are NEVER uploaded to our servers.
-• PDF Printing: We use a printing service to allow you to preview and print your documents. Note that your document data may be passed through your device's system print spooler or a third-party print application (such as a printer manufacturer's companion app) if configured on your device. We have no control over third-party print applications.
+• Image Selection: We use Android's system Photo Picker (via 'image_picker') to allow you to select photos to convert into PDF. On Android 13 and above, this uses the Android Photo Picker API — no broad storage or media permissions are required. These images are processed locally on your device and are NEVER uploaded to our servers.
+• PDF File Access: We use the Storage Access Framework (system file picker) via 'file_picker' to let you select PDF files. No broad storage permissions are required on modern Android.
+• PDF Printing: We use a printing service to allow you to preview and print your documents. Note that your document data may be passed through your device's system print spooler or a third-party print application if configured on your device. We have no control over third-party print applications.
 • Internet: Required for Google AdMob to display advertisements.
 • Advertising ID (AD_ID): Automatically used by Google AdMob for ad delivery and measurement. You can reset or opt out via Android Settings → Google → Ads.
 
-Note: This app uses system-managed file pickers (Storage Access Framework) to select PDFs and images, which means we do not require or request broad 'Storage' or 'Media' permissions on modern Android devices. On older Android devices (API 29 and below), the app may request the 'WRITE_EXTERNAL_STORAGE' permission solely to ensure files can be saved correctly; this permission is not requested on modern Android versions.
+Note: This app uses system-managed pickers (Android Photo Picker and Storage Access Framework) to select images and PDFs. We do NOT request or use broad 'READ_MEDIA_IMAGES', 'READ_MEDIA_VIDEO', or general 'READ_EXTERNAL_STORAGE' permissions. On older Android devices (API 29 and below), the app may request 'WRITE_EXTERNAL_STORAGE' solely to ensure files can be saved correctly; this permission is not requested on modern Android versions.
 
 All permissions are used strictly for the stated purpose only.</p>
   </section>
@@ -379,6 +380,7 @@ If you are a parent or guardian and believe your child has provided us with pers
 • We do NOT collect or access your device's location
 • We do NOT upload or transmit your PDF file contents to any server (file names/paths are kept locally only, as described in Sections 1 and 8)
 • We do NOT collect contact details, emails, or phone numbers
+• We do NOT request broad media storage permissions (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO) — the app uses system pickers instead
 • We do NOT share data for advertising purposes beyond AdMob's own policy</p>
   </section>
 
@@ -426,7 +428,7 @@ Note: Since we do not store any personal data on our servers, data-related reque
 
   <div class="dates">
     Effective Date: June 1, 2026<br>
-    Last Updated: July 25, 2026
+    Last Updated: August 5, 2026
   </div>
 
 </div>
