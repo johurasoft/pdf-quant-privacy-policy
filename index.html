@@ -238,7 +238,7 @@
   <div class="summary-card">
     <h2>Quick Summary</h2>
     <div class="summary-point"><span class="emoji">📱</span><span>All PDF processing happens on your device — no uploads</span></div>
-    <div class="summary-point"><span class="emoji">🔒</span><span>Your files are never accessed by us or third parties</span></div>
+    <div class="summary-point"><span class="emoji">🔒</span><span>We never access your files; the app processes them on your device</span></div>
     <div class="summary-point"><span class="emoji">📢</span><span>Ads are shown via Google AdMob with your consent</span></div>
     <div class="summary-point"><span class="emoji">❌</span><span>We do not sell your personal information</span></div>
     <div class="summary-point"><span class="emoji">🛡️</span><span>Your documents stay private — we never see them</span></div>
@@ -250,8 +250,8 @@
     <h3>Contents</h3>
     <ol>
       <li><a href="#s1">Information Collection and Use</a></li>
-      <li><a href="#s2">File Processing</a></li>
-      <li><a href="#s3">Permissions and Third-Party Services</a></li>
+      <li><a href="#s2">File Processing (Secure On-Device Processing)</a></li>
+      <li><a href="#s3">Permissions and Their Purpose</a></li>
       <li><a href="#s4">Advertisements (Google AdMob)</a></li>
       <li><a href="#s5">GDPR &amp; User Consent (UMP)</a></li>
       <li><a href="#s6">Third-Party Services</a></li>
@@ -268,48 +268,48 @@
 
   <section class="policy-section" id="s1">
     <h2>1. Information Collection and Use</h2>
-    <p>PDF Quant: Editor &amp; Manager is designed to work entirely offline. All file operations — including PDF compression, merging, splitting, page deletion, image-to-PDF conversion, and PDF-to-image conversion — are performed locally on your device.
+    <p>PDF Quant: Editor &amp; Manager is designed to prioritize your privacy by processing your files locally on your device. All core file operations — including PDF compression, merging, splitting, page deletion, image-to-PDF, PDF-to-image, PDF-to-Word, Word-to-PDF, PDF-to-Excel, PDF editing (text, images, shapes, drawing), watermarking, page organizing, PDF locking/unlocking, document scanning and presenting — are performed on your device.
 
 We do not upload your files or personal documents to any server. The information the app stores, entirely on your own device, includes:
 
 • App settings (theme preference) stored locally via 'shared_preferences'
-• Recent Documents History: the names and file paths of PDFs you create or modify, stored locally so you can find them again in the app. This list never leaves your device and can be cleared at any time (see Section 12).
+• Recent Documents History: the names and paths of files you create or modify, plus an app-private copy of those files, stored only on your device. This list never leaves your device and can be cleared at any time (see Section 12).
 • Ad-related identifiers collected by Google AdMob (see Section 4)
 
-Photo/Image Access: When you use the Image to PDF feature, the app uses Android's system Photo Picker ('image_picker' v1.1.2+) to let you select photos from your device gallery. This uses the Android Photo Picker API, which does not require broad media storage permissions. The selected images are processed entirely on your device and are NEVER uploaded, transmitted, or stored by us.
+Document Scanner &amp; Text Recognition (OCR): To scan documents and extract text for Word or Excel files, we use Google ML Kit Document Scanner and Text Recognition. These models run on your device. Your document contents are NEVER uploaded for text extraction.
 
-Document Printing: When you use the print feature, the app uses the 'printing' package to send your document to your device's print system. This data is handled by your device's print spooler or connected printer service — not by us.
+PDF Password Protection: When you use the Lock PDF feature, the password is applied directly to your PDF file on your device. We never see, store, or transmit this password. If you forget it, we cannot recover it.
+
+Photo/Image Access: When you use Image to PDF or Edit PDF, the app uses 'image_picker' (Android Photo Picker) to let you select photos. These images are processed on your device and are NEVER uploaded or transmitted by us.
 
 We do NOT upload, transmit, or have remote access to:
 • Your PDF file contents
-• Location data
 • Contact details, email addresses, or phone numbers
-• Photos or images beyond what you explicitly select for conversion</p>
+• Photos or images beyond what you explicitly select</p>
   </section>
 
   <section class="policy-section" id="s2">
-    <h2>2. File Processing</h2>
-    <p>All PDF operations (merge, split, compress, image to PDF, PDF to image, page delete) occur entirely on your device:
+    <h2>2. File Processing (Secure On-Device Processing)</h2>
+    <p>All PDF operations — merging, splitting, compressing, editing, scanning, and conversions (Word/Excel/Images) — occur locally on your device:
 
-• Files are NOT uploaded to any server
-• Files are NOT stored by us
-• Temporary files are automatically deleted after processing
-• We have NO access to your documents at any time</p>
+• NO CLOUD UPLOADS: Your files are NEVER uploaded to any server or third-party cloud service.
+• ON-DEVICE OCR/SCANNING: Google ML Kit processes your documents on your device. Document content is not sent to Google servers.
+• NO SERVER-SIDE STORAGE: We do not store copies of your documents on any server. Temporary working files are kept in the app's cache and are removed when no longer needed or by Android. A copy of each file you create is kept in the app's private storage so you can reopen it from Recent Documents. 'Remove from list' or 'Clear History' deletes these copies, and uninstalling the app removes everything.
+• We have NO remote access to the content of your documents at any time.</p>
   </section>
 
   <section class="policy-section" id="s3">
-    <h2>3. Permissions and Third-Party Services</h2>
-    <p>PDF Quant: Editor &amp; Manager requests the following permissions and uses these services:
+    <h2>3. Permissions and Their Purpose</h2>
+    <p>PDF Quant: Editor &amp; Manager only requests permissions essential for its core functionality:
 
-• Image Selection: We use Android's system Photo Picker (via 'image_picker') to allow you to select photos to convert into PDF. On Android 13 and above, this uses the Android Photo Picker API — no broad storage or media permissions are required. These images are processed locally on your device and are NEVER uploaded to our servers.
-• PDF File Access: We use the Storage Access Framework (system file picker) via 'file_picker' to let you select PDF files. No broad storage permissions are required on modern Android.
-• PDF Printing: We use a printing service to allow you to preview and print your documents. Note that your document data may be passed through your device's system print spooler or a third-party print application if configured on your device. We have no control over third-party print applications.
-• Internet: Required for Google AdMob to display advertisements.
-• Advertising ID (AD_ID): Automatically used by Google AdMob for ad delivery and measurement. You can reset or opt out via Android Settings → Google → Ads.
+• File Selection &amp; Storage: We use the system file picker (Storage Access Framework) via 'file_picker' to let you select PDFs and files, and to save results to your device. On Android 9 and below (API 29 and below), the app may request 'WRITE_EXTERNAL_STORAGE' solely to save files; it is not requested on newer versions.
+• Image Selection: We use Android's system Photo Picker via 'image_picker'. No broad media permissions are required.
+• Camera: The camera is used by Google's ML Kit Document Scanner screen when you scan a document. The app itself does not hold the CAMERA permission.
+• Keep Screen Awake: In the Presenter feature, the app can keep the screen on while a presentation is open. No special permission or personal data is involved.
+• Internet Access: Required for Google AdMob, the UMP consent form, and for Google ML Kit to download on-device text-recognition models when needed.
+• Advertising ID (AD_ID): Used by Google AdMob for ad delivery and measurement. You can reset or opt out via Android Settings → Google → Ads.
 
-Note: This app uses system-managed pickers (Android Photo Picker and Storage Access Framework) to select images and PDFs. We do NOT request or use broad 'READ_MEDIA_IMAGES', 'READ_MEDIA_VIDEO', or general 'READ_EXTERNAL_STORAGE' permissions. On older Android devices (API 29 and below), the app may request 'WRITE_EXTERNAL_STORAGE' solely to ensure files can be saved correctly; this permission is not requested on modern Android versions.
-
-All permissions are used strictly for the stated purpose only.</p>
+We do NOT request or use broad 'READ_MEDIA_IMAGES', 'READ_MEDIA_VIDEO', 'READ_MEDIA_AUDIO' or 'MANAGE_EXTERNAL_STORAGE' permissions.</p>
   </section>
 
   <section class="policy-section" id="s4">
@@ -317,10 +317,10 @@ All permissions are used strictly for the stated purpose only.</p>
     <p>We use Google AdMob to display banner and interstitial advertisements. AdMob may collect certain data including:
 
 • Device identifiers (e.g., Advertising ID / AD_ID)
-• IP address
-• Usage data for ad personalization
+• IP address and approximate (coarse) location derived from it, for ad delivery and targeting
+• Usage data, app interactions and crash/diagnostic logs for ad delivery, measurement and personalization
 
-We use Google's User Messaging Platform (UMP) to request your consent before displaying personalized ads, in compliance with GDPR and Google Play policies.
+We use Google's User Messaging Platform (UMP) to request your consent (where legally required) before displaying personalized ads.
 
 For more information, see Google's Privacy Policy:
 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
@@ -330,10 +330,10 @@ For more information, see Google's Privacy Policy:
     <h2>5. GDPR &amp; User Consent (UMP)</h2>
     <p>For users in the European Economic Area (EEA) and UK, in accordance with GDPR:
 
-• On first launch, you will see a consent dialog
+• Where required by law, a consent dialog is shown when you launch the app
 • You may Accept or Decline personalized advertisements
 • Your choice is stored locally and respected immediately
-• You may change your preference at any time from app Settings
+• You may change your preference at any time using 'GDPR Privacy Options' in the app's Settings (available where required by region; elsewhere the app shows that it is not required)
 
 Declining personalized ads does NOT affect any app functionality. All PDF features work regardless of your ad choice.</p>
   </section>
@@ -345,20 +345,23 @@ Declining personalized ads does NOT affect any app functionality. All PDF featur
 • Google Play Services
 • Google AdMob — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
 • Google User Messaging Platform (UMP)
+• Google ML Kit (on-device Text Recognition and Document Scanner)
+• Google Play In-App Review — may be shown to ask for a rating
 
-These services may collect information used to identify you as described in their respective policies.</p>
+These services may collect information used to identify you as described in their respective policies. Google ML Kit may download its on-device models over the internet when needed; your documents are never uploaded.</p>
   </section>
 
   <section class="policy-section" id="s7">
     <h2>7. File Sharing</h2>
-    <p>When you use the 'Share' feature, your selected files are passed directly to third-party applications of your choice (e.g., WhatsApp, Gmail, Bluetooth). Once shared, the data is subject to the privacy policy of the respective application. We have no control over how third-party apps handle your shared data.</p>
+    <p>When you use the 'Share' feature, your selected files are passed directly to third-party applications of your choice (e.g., WhatsApp, Gmail, Bluetooth). Once shared, the data is subject to the privacy policy of the respective application. We have no control over how third-party apps handle your shared data.
+
+PDF files that you send to PDF Quant from other apps ('Open with' or 'Share') are processed locally on your device only.</p>
   </section>
 
   <section class="policy-section" id="s8">
     <h2>8. Data Storage &amp; Security</h2>
-    <p>• App settings and Recent Documents history (file names and paths) are stored locally on your device only, and are never uploaded anywhere
-• PDF files are processed in temporary storage and deleted immediately after
-• Uninstalling the app removes all locally stored data
+    <p>• App settings and Recent Documents history (file names, paths and an app-private copy of files you created) are stored locally on your device only, and are never uploaded anywhere
+• Temporary working files are kept in the app's cache and are removed when no longer needed or by Android. 'Remove from list' or 'Clear History' deletes the Recent Documents copies, and uninstalling the app removes all local data
 • We do not operate any servers that store your data
 • No user accounts or passwords are required
 
@@ -377,10 +380,10 @@ If you are a parent or guardian and believe your child has provided us with pers
     <p>We want to be fully transparent about what we do not collect:
 
 • We do NOT sell or rent your personal information to any third party
-• We do NOT collect or access your device's location
 • We do NOT upload or transmit your PDF file contents to any server (file names/paths are kept locally only, as described in Sections 1 and 8)
 • We do NOT collect contact details, emails, or phone numbers
-• We do NOT request broad media storage permissions (READ_MEDIA_IMAGES, READ_MEDIA_VIDEO) — the app uses system pickers instead
+• We do NOT access your device's precise location; only Google AdMob may derive approximate location from your IP address (Section 4)
+• We do NOT request broad media storage permissions — the app uses system pickers instead
 • We do NOT share data for advertising purposes beyond AdMob's own policy</p>
   </section>
 
@@ -399,9 +402,9 @@ For details: <a href="https://policies.google.com/privacy" target="_blank" rel="
 
 • Right to Access: We do not store personal data on our servers. For data collected by Google AdMob (such as Advertising ID), please refer to Google's data access tools at myaccount.google.com
 • Right to Deletion: You can use the 'Clear History' option in the Recent Documents / My Files screen to remove the local list of file names and paths at any time, or uninstall the app to delete all local app data
-• Right to Withdraw Consent: Change ad preference in app Settings
+• Right to Withdraw Consent: Use 'GDPR Privacy Options' in the app's Settings (available where required by region)
 • Right to Opt-Out: Android Settings → Google → Ads → Opt out of Ads Personalization
-• Right to Object: Decline analytics or personalized ads at any time
+• Right to Object: Decline personalized ads at any time via the consent form or device settings
 
 California residents (CCPA): We do not sell your personal information.
 
@@ -419,7 +422,8 @@ You are advised to review this page periodically. Changes are effective immediat
     <h2>14. Contact Us</h2>
     <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:
 
-Email: <a href="mailto:johurasoftone@gmail.com">johurasoft@gmail.com</a>
+Publisher: Johura Soft
+Email: <a href="mailto:johurasoft@gmail.com">johurasoft@gmail.com</a>
 Subject: PDF Quant — Privacy Request
 Response Time: Within 30 days
 
@@ -428,7 +432,7 @@ Note: Since we do not store any personal data on our servers, data-related reque
 
   <div class="dates">
     Effective Date: June 1, 2026<br>
-    Last Updated: August 5, 2026
+    Last Updated: November 2026
   </div>
 
 </div>
